@@ -36,14 +36,14 @@
 }
 
 .foto {
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
   background-size: cover;
   background-position: center;
 }
 
 .foto1 {
-  background-image: url(../img/img.jpg);
+  background-image: url(../img/AL-schnauzer.jpg);
 }
 
 .foto2 {
@@ -96,8 +96,8 @@ h1 {
   overflow: hidden;
 }
 .img-section {
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
@@ -119,6 +119,14 @@ h1 {
 }
 /* .img-section:hover {
   transform: rotate(-10deg);
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+
+=======
+>>>>>>> nestor
 } */
 
 .precio {
@@ -414,3 +422,14 @@ textarea {
   max-height: 150px;
 }
 
+
+@media (max-width: 600px) {
+
+  .us-w-100 {
+    max-width: 100%;
+    min-width: 100%;
+  }
+  .d-none {
+    display: none;
+  }
+}
