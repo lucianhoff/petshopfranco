@@ -12,14 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="./assets/styles/custom.css">
+    <link rel="shortcut icon" href="./assets/img/logo.ico" type="image/x-icon">
     <title>PetShop | Contacto</title>
 </head>
 
 <body>
     <nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-custom">
         <div class="container-fluid d-flex align-items-center">
-            <img src="./assets/img/logo.png" width="50" alt="" class="me-3">
-            <a class="navbar-brand" href="#nombre">Franco PetShop</a>
+            <a href="./index.html" class="text-decoration-none"><img src="./assets/img/logo.png" width="50" alt=""
+                    class="me-3"></a>
+            <a class="navbar-brand" href="./index.html">Franco PetShop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -36,33 +39,48 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Shop
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="./juguetes.html">Juguetes</a></li>
-                            <li><a class="dropdown-item" href="./farmacia">Farmacia</a></li>
+                        <ul class="dropdown-menu bg-naranja" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-white hover" href="./juguetes.html">Juguetes</a></li>
+                            <li><a class="dropdown-item text-white hover" href="./farmacia.html">Farmacia</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Contacto</a>
+                        <a class="nav-link active" href="./contacto.html">Contacto</a>
                     </li>
-                    <li class="d-md-none d-sm-block">
-                        <a href="./carrito.html"><i class="uil uil-shopping-cart cart fs-1 text-white"></i></a>
+                    <li>
+                        <div class="pe-5 my-3 d-sm-block d-lg-none ">
+                            <a type="button" href="./carrito.html"
+                                class="btn position-relative bg-white-custom bg-naranja">
+                                <i class="uil uil-shopping-cart fs-2 text-azul"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-6">
+                                    <span id="cantidad-carrito1" class="carritoCuenta">0</span>
+                                </span>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="pe-5 d-md-block d-sm-none">
-            <a href="./carrito.html"><i class="uil uil-shopping-cart cart fs-1 text-white"></i></a>
+        <div class="pe-5 my-3 d-none d-sm-none d-lg-block ">
+            <a type="button" href="./carrito.html" class="btn position-relative bg-white-custom bg-naranja">
+                <i class="uil uil-shopping-cart fs-2 text-azul"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-6">
+                    <span id="cantidad-carrito2" class="carritoCuenta">0</span>
+                </span>
+            </a>
         </div>
     </nav>
     <header class="bg-white">
 
         <div class="position-relative overflow-hidden text-center">
-            <div class="col-md-5 p-lg-5 mx-auto">
-                <h1 class="fs-1"><span class="nombre ps-3">Franco</span> <span class="pet">PetShop</span></h1>
+            <div class="col-md-5 p-lg-5 mx-auto pt-md-5 padding-top-us">
+                <h1 class="fs-1"><span class="nombre ps-3 ">Franco</span> <span class="pet">PetShop</span></h1>
                 <p class="lead fw-normal pet fw-bold">Tu PetShop de confianza.</p>
             </div>
             <div class="product-device shadow-sm d-none d-md-block"></div>
             <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        </div>
         </div>
     </header>
     <main class="container-fluid">
@@ -72,7 +90,7 @@
                 <p class="pb-2"><em>Rellena el formulario indicando el producto de tu interés o las dudas, a la brevedad
                         nuestro equipo se pondrá en contacto con vos.</em></p>
             </div>
-            <form class="container row mx-auto">
+            <form class="container row mx-auto" id="form">
                 <div class="col-lg-5 mb-4">
                     <div class="card">
                         <div class="card-body">
@@ -81,43 +99,51 @@
                             </div>
                             <div class="py-1">
                                 <label for="form-name">Nombre y apellido:</label>
-                                <input type="text" id="form-name" class="form-control">
+                                <input type="text" id="form-name" class="form-control" name="form-name">
+                                <div id="msgName"><i class="bi"></i></div>
                             </div>
                             <div class="py-1">
                                 <label for="form-email">Email:</label>
                                 <input type="email" id="form-email" class="form-control"
-                                    placeholder="nombre@ejemplo.com">
+                                    placeholder="nombre@ejemplo.com" name="form-email">
+                                <div id="msgEmail"><i class="bi"></i></div>
                             </div>
                             <div class="py-1">
-                                <label for="form-email">Numero:</label>
-                                <input type="number" id="form-number" class="form-control" placeholder="351-XXXXXX">
+                                <label for="form-number">Numero:</label>
+                                <input type="number" id="form-number" class="form-control" placeholder="351-XXXXXX"
+                                    name="form-number">
+                                <div id="msgNumber"><i class="bi"></i></div>
                             </div>
-                            <div class="custom-control custom-checkbox py-1">
+                            <div class="custom-control custom-checkbox py-1" id="check">
                                 <fieldset class="col-lg-10 d-flex">Mascota:
                                     <div class="px-2">
-                                        <input type="checkbox" class="custom-control-input" id="gato" name="gato">
+                                        <input type="checkbox" class="custom-control-input" id="gato" name="gato"
+                                            value="gato">
                                         <label class="custom-control-label" for="gato">Gato</label>
                                     </div>
                                     <div class="px-2">
-                                        <input type="checkbox" class="custom-control-input" id="perro" name="perro">
+                                        <input type="checkbox" class="custom-control-input" id="perro" name="perro"
+                                            value="perro">
                                         <label class="custom-control-label" for="perro">Perro</label>
                                     </div>
                                     <div class="px-2">
-                                        <input type="checkbox" class="custom-control-input" id="otro" name="otro">
+                                        <input type="checkbox" class="custom-control-input" id="otro" name="otro"
+                                            value="otro">
                                         <label class="custom-control-label" for="otro">Otro</label>
                                     </div>
                                 </fieldset>
                             </div>
                             <div class="py-1">
                                 <label for="form-Subject">Asunto:</label>
-                                <input type="text" id="form-Subject" class="form-control">
+                                <input type="text" id="form-subject" class="form-control" name="form-subject">
+                                <div id="msgSubject"><i class="bi"></i></div>
                             </div>
                             <div class="py-1">
                                 <label for="form-text">Decinos lo que buscas...</label>
                                 <textarea id="form-text" class="form-control md-textarea" rows="3"></textarea>
                             </div>
                             <div class="text-center mt-4">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                <button type="submit" class="btn btn-primary" id="enviarForm">Enviar</button>
                             </div>
                         </div>
                     </div>
@@ -151,20 +177,65 @@
             </div>
         </section>
     </main>
-    <footer class="mt-3 ">
+    <footer class="mt-3">
         <div>
-            <div class="d-flex flex-wrap justify-content-between align-items-center py-3 bg-custom">
-                <p class="ps-5 col-md-4 mb-0 text-white">&copy; 2021 | Grupo 5 Inc.</p>
+            <div class="d-flex justify-content-between align-items-center p-3 bg-custom">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    &copy; 2021 | Grupo 5 Inc.
+                </button>
 
-                <a href="/"
-                    class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                    <img src="./assets/img/logo.png" width="50" alt="">
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal modal-alert position-static d-block py-5" tabindex="-1" role="dialog"
+                        id="modalChoice">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content rounded-4 shadow">
+                                <div class="modal-body p-4 text-center">
+                                    <h5 class="mb-2"><a href="https://github.com/lucianhoff/petshopfranco"
+                                            class="text-decoration-none text-black">Grupo 5</a></h5>
+                                    <p class="mb-1"><a href="https://github.com/cristian-desarrollador-reactjs" target="_blank" class="text-decoration-none fs-6">Cristian
+                                            Araya</a></p>
+                                    <p class="mb-1"><a href="https://github.com/nemovps" target="_blank" class="text-decoration-none fs-6">Néstor
+                                            Espinoza</a></p>
+                                    <p class="mb-1"><a href="https://github.com/amparolopez" target="_blank" class="text-decoration-none fs-6">Amparo López</a>
+                                    </p>
+                                    <p class="mb-1"><a href="https://github.com/silc22" target="_blank" class="text-decoration-none fs-6">Silvana
+                                            Cerquatti</a></p>
+                                    <p class="mb-1"><a href="https://github.com/gastonjimenez" target="_blank" class="text-decoration-none fs-6">Gaston
+                                            Jimenez</a></p>
+                                    <p class="mb-1"><a href="https://github.com/LeoFormin1" target="_blank" class="text-decoration-none fs-6">Leonel
+                                            Formini</a></p>
+                                    <p class="mb-1"><a href="https://github.com/sulamittakauffman" target="_blank" class="text-decoration-none fs-6">Sulamitta
+                                            Kauffman</a></p>
+                                    <p class="mb-1"><a href="https://github.com/lucianhoff" target="_blank" class="text-decoration-none fs-6">Luciano
+                                            Aguirre</a></p>
+                                </div>
+                                <div class="modal-footer flex-nowrap p-0">
+
+                                    <a href="https://github.com/lucianhoff/petshopfranco"
+                                        class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0"
+                                        target="_blank">Ver GitHub</a>
+
+                                    <a href="./contacto.html"
+                                        class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-right">Volver
+                                        a la pagina</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="./index.html">
+                    <img src="./assets/img/logo.png" width="50" alt="" />
                 </a>
 
-                <ul class="nav col-md-4 justify-content-end pe-5">
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Juguetes</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Farmacia</a></li>
+                <ul class="nav col-md-4 justify-content-end">
+                    <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-white">Home</a></li>
+                    <li class="nav-item"><a href="./juguetes.html" class="nav-link px-2 text-white">Juguetes</a></li>
+                    <li class="nav-item"><a href="./farmacia.html" class="nav-link px-2 text-white">Farmacia</a></li>
                     <li class="nav-item"><a href="./contacto.html" class="nav-link px-2 text-white">Contacto</a></li>
                 </ul>
             </div>
@@ -173,6 +244,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

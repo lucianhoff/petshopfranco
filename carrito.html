@@ -12,14 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/img/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="shortcut icon" href="./assets/img/logo.ico" type="image/x-icon">
     <title>PetShop | Carrito</title>
 </head>
 
 <body>
     <nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-custom">
         <div class="container-fluid d-flex align-items-center">
-            <img src="./assets/img/logo.png" width="50" alt="" class="me-3">
-            <a class="navbar-brand" href="#">Franco PetShop</a>
+            <a href="./index.html" class="text-decoration-none"><img src="./assets/img/logo.png" width="50" alt=""
+                    class="me-3"></a>
+            <a class="navbar-brand" href="./index.html">Franco PetShop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -36,35 +38,44 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Shop
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="./juguetes.html">Juguetes</a></li>
-                            <li><a class="dropdown-item" href="./farmacia">Farmacia</a></li>
+                        <ul class="dropdown-menu bg-naranja" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-white hover" href="./juguetes.html">Juguetes</a></li>
+                            <li><a class="dropdown-item text-white hover" href="./farmacia.html">Farmacia</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./contacto.html">Contacto</a>
                     </li>
-                    <li class="d-md-none d-sm-block">
-                        <a href="./carrito.html"><i class="uil uil-shopping-cart cart fs-1 text-white"></i></a>
+                    <li>
+                        <div class="pe-5 my-3 d-sm-block d-md-block d-lg-none ">
+                            <a href="./carrito.html"
+                                class="btn position-relative bg-white-custom bg-naranja">
+                                <i class="uil uil-shopping-cart fs-2 text-azul"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-6">
+                                    <span id="cantidad-carrito1" class="carritoCuenta">0</span>
+                                </span>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="pe-5 my-3">
-            <a type="button" href="./carrito.html" class="btn position-relative bg-white-custom bg-naranja">
+        <div class="pe-5 my-3 d-none d-sm-none d-lg-block">
+            <a href="./carrito.html" class="btn position-relative bg-white-custom bg-naranja">
                 <i class="uil uil-shopping-cart fs-2 text-azul"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-6">
-                    <span id="cantidad-carrito">0</span>
+                    <span id="cantidad-carrito2" class="carritoCuenta">0</span>
                 </span>
-              </a>
+            </a>
         </div>
     </nav>
     <header class="">
-        <img src="./assets/img/hero_1.png" width="100%" alt="">
+        <img src="./assets/img/hero_1.png" width="100%" alt="Foto de animales">
     </header>
     <main>
         <div class="bg-custom p-4">
-            <p class="fs-1 fw-bolder text-white">Compra de XXXXXX</p>
+            <p class="fs-1 fw-bolder text-white text-center">Resumen de compra</p>
         </div>
         <section class="shopping-cart my-5 p-3">
             <div class="container">
@@ -77,30 +88,15 @@
                                         <th>Producto</th>
                                         <th>Cantidad</th>
                                         <th>Total</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody id="items">
-                                    <!-- <tr>
-                                        <td class="product__cart__item">
-                                            <div class="product__cart__item__pic">
-                                                <img class="shopping__cart__table-img" src="./assets/img/IMG_3516.jpg">
-                                            </div>
-                                            <div class="product__cart__item__text">
-                                                <h6>Nombre del producto</h6>
-                                                <h5 id="id">$ 000</h5>
-                                            </div>
-                                        </td>
-                                        <td class="quantity__item">
-                                            <div class="quantity">
-                                                <div class="pro-qty-2">
-                                                    <input type="text" value="1" readonly>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td id="ccu-total" class="cart__price">$ 000</td>
-                                    </tr> -->
                                 </tbody>
                             </table>
+                            <div>
+                                <div id="alerta"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -108,16 +104,16 @@
                             <h6>Código de descuento</h6>
                             <form action="#">
                                 <input id="cupon" type="text" placeholder="Cod. de descuento">
-                                <button type="submit" class="fw-bold">Aplicar</button>
+                                <button type="submit" class="fw-bold btn-cupon">Aplicar</button>
                             </form>
                         </div>
                         <div class="cart__total">
                             <h6 class="fw-bold">Detalle</h6>
                             <ul>
-                                <li class="fw-bold">Subtotal <span id="subtotal">$ X</span></li>
-                                <li class="fw-bold">Envío <span id="costoEnvio">$ X</span></li>
-                                <li class="fw-bold">Cupon de descuento <span id="codigoCupon">$ X</span></li>
-                                <li class="fw-bold">Total <span id="total">$ X</span></li>
+                                <li class="fw-bold">Subtotal <span id="subtotal">$ 0</span></li>
+                                <li class="fw-bold">Envío <span id="costoEnvio">$ 0</span></li>
+                                <li class="fw-bold">Cupon de descuento <span id="codigoCupon">$ 0</span></li>
+                                <li class="fw-bold">Total <span id="total">$ 0</span></li>
                             </ul>
                             <a href="#" class="primary-btn fw-bolder" id="comprar">Finalizar compra</a>
                         </div>
@@ -126,20 +122,65 @@
             </div>
         </section>
     </main>
-    <footer class="mt-3 ">
+    <footer class="mt-3">
         <div>
-            <div class="d-flex flex-wrap justify-content-between align-items-center py-3 bg-custom">
-                <p class="ps-5 col-md-4 mb-0 text-white">&copy; 2021 | Grupo 5 Inc.</p>
+            <div class="d-flex justify-content-between align-items-center p-3 bg-custom">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    &copy; 2021 | Grupo 5 Inc.
+                </button>
 
-                <a href="/"
-                    class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                    <img src="./assets/img/logo.png" width="50" alt="">
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal modal-alert position-static d-block py-5" tabindex="-1" role="dialog"
+                        id="modalChoice">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content rounded-4 shadow">
+                                <div class="modal-body p-4 text-center">
+                                    <h5 class="mb-2"><a href="https://github.com/lucianhoff/petshopfranco"
+                                            class="text-decoration-none text-black">Grupo 5</a></h5>
+                                    <p class="mb-1"><a href="https://github.com/cristian-desarrollador-reactjs" target="_blank" class="text-decoration-none fs-6">Cristian
+                                            Araya</a></p>
+                                    <p class="mb-1"><a href="https://github.com/nemovps" target="_blank" class="text-decoration-none fs-6">Néstor
+                                            Espinoza</a></p>
+                                    <p class="mb-1"><a href="https://github.com/amparolopez" target="_blank" class="text-decoration-none fs-6">Amparo López</a>
+                                    </p>
+                                    <p class="mb-1"><a href="https://github.com/silc22" target="_blank" class="text-decoration-none fs-6">Silvana
+                                            Cerquatti</a></p>
+                                    <p class="mb-1"><a href="https://github.com/gastonjimenez" target="_blank" class="text-decoration-none fs-6">Gaston
+                                            Jimenez</a></p>
+                                    <p class="mb-1"><a href="https://github.com/LeoFormin1" target="_blank" class="text-decoration-none fs-6">Leonel
+                                            Formini</a></p>
+                                    <p class="mb-1"><a href="https://github.com/sulamittakauffman" target="_blank" class="text-decoration-none fs-6">Sulamitta
+                                            Kauffman</a></p>
+                                    <p class="mb-1"><a href="https://github.com/lucianhoff" target="_blank" class="text-decoration-none fs-6">Luciano
+                                            Aguirre</a></p>
+                                </div>
+                                <div class="modal-footer flex-nowrap p-0">
+
+                                    <a href="https://github.com/lucianhoff/petshopfranco"
+                                        class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0"
+                                        target="_blank">Ver GitHub</a>
+
+                                    <a href="./carrito.html"
+                                        class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-right">Volver
+                                        a la pagina</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="./index.html">
+                    <img src="./assets/img/logo.png" width="50" alt="" />
                 </a>
 
-                <ul class="nav col-md-4 justify-content-end pe-5">
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Juguetes</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Farmacia</a></li>
+                <ul class="nav col-md-4 justify-content-end">
+                    <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-white">Home</a></li>
+                    <li class="nav-item"><a href="./juguetes.html" class="nav-link px-2 text-white">Juguetes</a></li>
+                    <li class="nav-item"><a href="./farmacia.html" class="nav-link px-2 text-white">Farmacia</a></li>
                     <li class="nav-item"><a href="./contacto.html" class="nav-link px-2 text-white">Contacto</a></li>
                 </ul>
             </div>
@@ -148,10 +189,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        <script src="./assets/js/main.js"></script>
-   
+    <script src="./assets/js/main.js"></script>
+
 </body>
 
 </html>
